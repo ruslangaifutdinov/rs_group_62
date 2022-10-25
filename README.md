@@ -2,4 +2,4 @@
 RS gitflow team project (Car_Site)
 
 Произвести installation проекта командой 
-```npm install``` // `>сокращённо npm i`
+```npm install``` или сокращённо: `сокращённо npm i`
