@@ -1,3 +1,3 @@
 export default class Header {
-  renderHeader() {}
+  render() {}
 }
