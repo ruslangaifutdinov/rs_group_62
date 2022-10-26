@@ -16,7 +16,7 @@ export default class App {
     this.vision = new Vision();
     this.service = new Service();
     this.main = new Main();
-    this.numbers = new Numbers();
+    this.numbers = new Numbers('http://1067407-ck20566.tmweb.ru:3000/api/numbers');
     this.patners = new Partners();
     this.form = new SubmitForm();
     this.footer = new Footer();
@@ -34,5 +34,8 @@ export default class App {
       this.form.render(),
       this.footer.render()
     );
+
+    // Вызывает метод, отвечающий за анимацию чисел в блоке numbers
+    this.numbers.triggerNumbersAnimations()
   }
 }
