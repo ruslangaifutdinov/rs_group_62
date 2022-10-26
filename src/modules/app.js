@@ -17,7 +17,7 @@ export default class App {
     this.service = new Service();
     this.main = new Main();
     this.numbers = new Numbers('http://1067407-ck20566.tmweb.ru:3000/api/numbers');
-    this.patners = new Partners();
+    this.partners = new Partners('http://1067407-ck20566.tmweb.ru:3000/api/pictures');
     this.form = new SubmitForm();
     this.footer = new Footer();
   }
@@ -30,12 +30,13 @@ export default class App {
       this.service.render(),
       this.main.render(),
       this.numbers.render(),
-      this.patners.render(),
+      this.partners.render(),
       this.form.render(),
       this.footer.render()
     );
 
     // Вызывает метод, отвечающий за анимацию чисел в блоке numbers
     this.numbers.triggerNumbersAnimations()
+    this.partners.renderImgs()
   }
 }
