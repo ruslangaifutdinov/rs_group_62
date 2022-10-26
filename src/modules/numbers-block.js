@@ -53,9 +53,8 @@ export default class Numbers {
       <div class="bloc full-width-bloc tc-black-2" id="bloc-7">
       <div class="container bloc-no-padding">
         <div class="row voffset-lg">
-          <div class="col-md-12 offset-lg--1 col-lg-6">
+          <div class="col-md-12 offset-lg--1 col-lg-6 number-block-img">
             <img
-              src="./src/img/car_template_blocs_23.png"
               data-src="img/car_template_blocs_23.png"
               class="img-fluid mx-auto d-block img-style mg-lg lazyload"
               alt="car_template_blocs_23"
