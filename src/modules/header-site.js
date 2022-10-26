@@ -1,3 +1,5 @@
+const imageSvg = `xmlns="http://www.w3.org/2000/svg"`
+
 export default class Header {
   constructor() {
     this.block_1 = document.createElement('div')
@@ -29,7 +31,9 @@ export default class Header {
 
     const titleH1 = document.createElement('h1')
     titleH1.className = `mg-md text-center tc-white h1-style text-md-start`
-    titleH1.textContent = `THE FUTURE OF MOBILITY IS HERE${(<br />)}`
+    titleH1.textContent = `THE FUTURE OF MOBILITY IS HERE`
+
+    const tegBR = document.createElement('br')
 
     const titleH3 = document.createElement('h3')
     titleH3.className = `mg-md float-none text-center tc-white h3-bloc-0-style text-md-start`
@@ -43,11 +47,11 @@ export default class Header {
     btnLg.href = 'index.html'
     btnLg.textContent = `Explore&nbsp;`
 
-    const btnScroll = this.#blockButton()
+    // const btnScroll = this.#blockButton()
 
     divCenter.append(btnLg)
-    divColCenter.append(titleH1, titleH3, divCenter)
-    blockRow.append(divColCenter, btnScroll)
+    divColCenter.append(titleH1, tegBR, titleH3, divCenter)
+    blockRow.append(divColCenter)
 
     return blockRow
   }
@@ -86,15 +90,17 @@ export default class Header {
     const btnA = document.createElement('a')
     btnA.className = `bloc-button btn btn-d scrollToTop`
     btnA.onclick = `scrollToTarget('1',this)`
-    btnA.textContent = `${(
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="22"
-        height="22"
-        viewBox="0 0 32 32">
-        <path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13" />
-      </svg>
-    )}`
+
+    imageSvg.setAttribute('width="22", height="22", viewBox="0 0 32 32"')
+    // btnA.textContent = `${(
+    //   <svg
+    //     xmlns="http://www.w3.org/2000/svg"
+    //     width="22"
+    //     height="22"
+    //     viewBox="0 0 32 32">
+    //     <path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13" />
+    //   </svg>
+    // )}`
 
     return btnA
   }
