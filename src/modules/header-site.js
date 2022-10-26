@@ -1,5 +1,3 @@
-const imageSvg = `xmlns="http://www.w3.org/2000/svg"`
-
 export default class Header {
   constructor() {
     this.block_1 = document.createElement('div')
@@ -31,9 +29,7 @@ export default class Header {
 
     const titleH1 = document.createElement('h1')
     titleH1.className = `mg-md text-center tc-white h1-style text-md-start`
-    titleH1.textContent = `THE FUTURE OF MOBILITY IS HERE`
-
-    const tegBR = document.createElement('br')
+    titleH1.textContent = 'THE FUTURE OF MOBILITY IS HERE'
 
     const titleH3 = document.createElement('h3')
     titleH3.className = `mg-md float-none text-center tc-white h3-bloc-0-style text-md-start`
@@ -47,11 +43,11 @@ export default class Header {
     btnLg.href = 'index.html'
     btnLg.textContent = `Explore&nbsp;`
 
-    // const btnScroll = this.#blockButton()
+    const btnScroll = this.#blockButton()
 
     divCenter.append(btnLg)
-    divColCenter.append(titleH1, tegBR, titleH3, divCenter)
-    blockRow.append(divColCenter)
+    divColCenter.append(titleH1, titleH3, divCenter)
+    blockRow.append(divColCenter, btnScroll)
 
     return blockRow
   }
@@ -72,7 +68,7 @@ export default class Header {
     const clickButton = document.createElement('a')
     clickButton.href = '#'
     clickButton.setAttribute('data-scroll-speed', '1000')
-    clickButton.onclick = `scrollToTarget('0',this)`
+    clickButton.setAttribute('onclick', `scrollToTarget('0', this)`)
 
     const spanInButton = document.createElement('span')
     spanInButton.className = `fa fa-angle-down icon-md animated bounce animDelay08`
@@ -89,9 +85,8 @@ export default class Header {
   #blockButton() {
     const btnA = document.createElement('a')
     btnA.className = `bloc-button btn btn-d scrollToTop`
-    btnA.onclick = `scrollToTarget('1',this)`
+    btnA.setAttribute('click', `scrollToTarget('1',this)`)
 
-    imageSvg.setAttribute('width="22", height="22", viewBox="0 0 32 32"')
     // btnA.textContent = `${(
     //   <svg
     //     xmlns="http://www.w3.org/2000/svg"
