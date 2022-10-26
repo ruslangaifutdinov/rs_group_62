@@ -28,13 +28,15 @@ export default class Navbar {
     navbarBrand.href = 'index.html'
     navbarBrand.textContent = 'Autodrive'
 
-    containerFluid.append(navbarBrand, this.#renderButton(), this.#renderList())
+    const buttonOne = this.#renderButton()
+    const listRender = this.#renderList()
+    containerFluid.append(navbarBrand, buttonOne, listRender)
     container.append(rowBlock)
     rowBlock.append(colBlock)
     colBlock.append(navBlock)
     navBlock.append(containerFluid)
-
-    return container
+    this.blockStickyNav.append(container)
+    return this.blockStickyNav
   }
 
   #renderButton() {
@@ -44,8 +46,8 @@ export default class Navbar {
     toggleButton.type = 'button'
     toggleButton.ariaLabel = 'Toggle navigation'
     toggleButton.ariaExpanded = 'false'
-    toggleButton.setAttribute('bs-toggle', 'collapse')
-    toggleButton.setAttribute('bs-target', '.navbar-34779')
+    toggleButton.setAttribute('data-bs-toggle', 'collapse')
+    toggleButton.setAttribute('data-bs-target', '.navbar-34779')
 
     const spanButton = document.createElement('span')
     spanButton.className = 'navbar-toggler-icon'
