@@ -54,11 +54,6 @@ export default class Numbers {
       <div class="container bloc-no-padding">
         <div class="row voffset-lg">
           <div class="col-md-12 offset-lg--1 col-lg-6 number-block-img">
-            <img
-              data-src="img/car_template_blocs_23.png"
-              class="img-fluid mx-auto d-block img-style mg-lg lazyload"
-              alt="car_template_blocs_23"
-            />
           </div>
           <div
             class="align-self-center offset-md-1 col-md-10 col-sm-10 offset-sm-1 offset-1 col-10 offset-lg-1 col-lg-4"
