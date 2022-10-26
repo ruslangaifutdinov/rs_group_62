@@ -20334,9 +20334,3 @@ a {
     -webkit-animation-delay: 0s;
   }
 }
-
-.number-block-img {
-  background-image: url("./src/img/car_template_blocs_23.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
