@@ -2,6 +2,8 @@ export default class Partners {
   constructor(dataUrl) {
     this.dataUrl = dataUrl
     this.container = document.createElement('div')
+    this.container.className = 'bloc bgc-black-2 tc-white'
+    this.container.id = 'bloc-8'
   }
 
   // Метод фетчит юрл картинки и добавляет на страницу
@@ -24,14 +26,12 @@ export default class Partners {
   renderImgs() {
     const imgContainers = document.querySelectorAll('[data-partners-img]')
     imgContainers.forEach((container, index) => {
-      console.log(index)
       this.#getImg(index, container)
     })
   }
 
   render() {
     this.container.innerHTML = `
-      <div class="bloc bgc-black-2 tc-white" id="bloc-8">
       <div class="container bloc-lg">
         <div class="row">
           <div class="col-md-6 order-md-1">
@@ -63,7 +63,6 @@ export default class Partners {
           </div>
         </div>
       </div>
-    </div>
     `
 
     return this.container
