@@ -5,19 +5,47 @@ export default class Header {
     this.block_1.id = 'block-0'
   }
   render() {
+    const parallaxContainer = document.createElement('div')
+    parallaxContainer.className = 'parallax__container'
+
     const parallax = document.createElement('div')
     parallax.className = `parallax-bmw bg-bmw-bmw`
+
+    parallaxContainer.append(parallax)
 
     const container = document.createElement('div')
     container.className = 'container'
 
     const divRow = this.#renderRow()
     const divFillBlock = this.#renderFillBlock()
+    const divRow2 = this.#oneRow()
+    const BtnScroll = this.#blockButton()
 
     container.append(divRow)
-    this.block_1.append(parallax, divRow, divFillBlock)
-
+    this.block_1.append(
+      parallaxContainer,
+      divRow2,
+      container,
+      divFillBlock,
+      BtnScroll,
+    )
     return this.block_1
+  }
+
+  #oneRow() {
+    const blocTop = document.createElement('div')
+    blocTop.className = 'container fill-bloc-top-edge'
+
+    const blocRow = document.createElement('div')
+    blocRow.className = 'row'
+
+    const colBlock = document.createElement('div')
+    colBlock.className = 'col-12'
+
+    blocRow.append(colBlock)
+    blocTop.append(blocRow)
+
+    return blocTop
   }
 
   #renderRow() {
@@ -87,15 +115,18 @@ export default class Header {
     btnA.className = `bloc-button btn btn-d scrollToTop`
     btnA.setAttribute('click', `scrollToTarget('1',this)`)
 
-    // btnA.textContent = `${(
-    //   <svg
-    //     xmlns="http://www.w3.org/2000/svg"
-    //     width="22"
-    //     height="22"
-    //     viewBox="0 0 32 32">
-    //     <path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13" />
-    //   </svg>
-    // )}`
+    const elemSVG = document.createElement('svg')
+    elemSVG.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
+    elemSVG.setAttribute('width', '22')
+    elemSVG.setAttribute('height', '22')
+    elemSVG.setAttribute('viewBox', '0 0 32 32')
+
+    const pathStr = document.createElement('path')
+    pathStr.className = `scroll-to-top-btn-icon`
+    pathStr.setAttribute('d', 'M30,22.656l-14-13-14,13')
+
+    elemSVG.append(pathStr)
+    btnA.append(elemSVG)
 
     return btnA
   }
