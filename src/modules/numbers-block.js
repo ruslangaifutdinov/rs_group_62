@@ -14,6 +14,8 @@ export default class Numbers {
 
   constructor(dataUrl) {
     this.container = document.createElement('div')
+    this.container.className = 'bloc full-width-bloc tc-black-2'
+    this.container.id = 'bloc-7' 
     this.#dataUrl = dataUrl
   }
 
@@ -51,7 +53,6 @@ export default class Numbers {
  
   render() {
     this.container.innerHTML = `
-      <div class="bloc full-width-bloc tc-black-2" id="bloc-7">
       <div class="container bloc-no-padding">
         <div class="row voffset-lg">
           <div class="col-md-12 offset-lg--1 col-lg-6">
@@ -104,7 +105,6 @@ export default class Numbers {
             </div>
           </div>
         </div>
-      </div>
       </div>
     `
     
